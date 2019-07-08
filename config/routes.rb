@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'shops/index'
-  get 'shops/show'
+  
   resources :products
 
-  root "products#index"
+  resources :shops, only:[:index, :show]
+
+  root "shops#index"
 
 end
